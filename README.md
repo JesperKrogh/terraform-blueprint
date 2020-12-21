@@ -31,7 +31,12 @@ Currently it will setup:
 * A seperate VPC (10.0.0.0/16) 
 * 1 subnet 10.0.1.0/24 (for a single management host) with an elastic IP assigned. 
 * 1 subnet 10.0.0.0/24 (for all the Ceph nodes) with internet through a NAT gateway. 
+* 1 DNS zone in route53 (ceph.internal) for the hosts. 
+* Static DNS names for all OSD's and MON's 
+* Using cloud-init it will set hostnames and search paths appropriately 
+* Install ssh-key ready for ansible to pick up the work from there. 
 
+Enjoy. 
 
 
 
