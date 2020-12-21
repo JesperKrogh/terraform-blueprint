@@ -26,5 +26,12 @@ What you'll need (for now) - changes in terraform.tfvars file:
 5. $ terraform init && terraform apply (type yes) 
 
 
+Currently it will setup: 
+
+* A seperate VPC (10.0.0.0/16) 
+* 1 subnet 10.0.1.0/24 (for a single management host) with an elastic IP assigned. 
+* 1 subnet 10.0.0.0/24 (for all the Ceph nodes) with internet through a NAT gateway. 
+
+
 
 
