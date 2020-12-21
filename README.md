@@ -10,9 +10,21 @@ Purpose could be:
 
 * Get hands-on experience managing a Ceph cluster - Grow, Shrink, updgrade, etc. 
 * Performance test Ceph (compare to local storage allready in place) 
+* Currently supports RDB devices (Buckets and CephFS is coming when the ceph-ansible changes are in place)
 
 Current version is compatible with ceph-ansible/stable-5.0 branch and runs on Ubuntu 18.04 
 (Still work in progress) 
 
 More blueprints may be added over time. 
+
+What you'll need (for now) - changes in terraform.tfvars file: 
+
+1. Generate ssh key for the hosts and change it
+2. Configure amount of instances (mons, osds) - MDSs are coming
+3. Modify instance types if defauls are unfit. 
+4. Setup aws cli (using access tokens)
+5. $ terraform init && terraform apply (type yes) 
+
+
+
 

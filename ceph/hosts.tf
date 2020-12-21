@@ -1,3 +1,7 @@
+variable "public_key" {
+ type  = string
+}
+
 variable "osd_count" {
   type = number
 }
@@ -16,7 +20,7 @@ variable "mon_instance_type" {
 
 resource "aws_instance" "management-host" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = var.mon_instance_type
   vpc_security_group_ids = [ aws_security_group.allow_ssh.id ]
   subnet_id = aws_subnet.cephadm.id
   key_name = aws_key_pair.terraformcluster.key_name
